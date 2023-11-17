@@ -11,6 +11,8 @@ import {
   Center,
   NativeBaseProvider,
   ScrollView,
+  Divider,
+  Badge,
 } from "native-base";
 import { data } from "../data/Data";
 import { View } from "react-native";
@@ -21,9 +23,18 @@ const FlatListMessage = () => {
     // <ScrollView>
 
     <Box>
-      <Heading fontSize="xl" p="4" pb="3">
-        Inbox
+      {/* <Heading fontSize="xl" p="4" pb="3">
+        Let's Chat
       </Heading>
+      <Divider
+        my="2"
+        _light={{
+          bg: "indigo.600",
+        }}
+        _dark={{
+          bg: "muted.50",
+        }}
+      /> */}
       <Box m={4}>
         <FlatList
           data={data}
@@ -46,7 +57,7 @@ const FlatListMessage = () => {
                       uri: item.avatarUrl,
                     }}
                   />
-                   <Avatar.Badge bg="green.500" />
+                  <Avatar.Badge bg="green.500" />
                 </View>
 
                 <VStack>
@@ -68,6 +79,7 @@ const FlatListMessage = () => {
                     {item.recentText}
                   </Text>
                 </VStack>
+
                 <Spacer />
                 <Text
                   fontSize="xs"
@@ -78,6 +90,18 @@ const FlatListMessage = () => {
                   alignSelf="flex-start"
                 >
                   {item.timeStamp}
+                  <Badge
+                    colorScheme="red"
+                    _text={{
+                      // fontSize: 8,
+                      // w:2
+                   
+                    }}
+                    rounded="full"
+                    variant="solid"
+                  >
+                    2
+                  </Badge>
                 </Text>
               </HStack>
             </Box>
@@ -85,7 +109,6 @@ const FlatListMessage = () => {
           keyExtractor={(item) => item.id}
         />
       </Box>
-    
     </Box>
     // </ScrollView>
   );

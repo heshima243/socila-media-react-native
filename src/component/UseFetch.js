@@ -18,6 +18,7 @@ const Usefetch = (url) => {
       })
       .catch((error) => {
         console.error("Erreur lors de la récupération des données :", error);
+        <Text>Check your CONNEXION</Text>
         setIsloading(false)
       });
   }, [url]);

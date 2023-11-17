@@ -12,7 +12,7 @@ const Article = ({ navigation }) => {
     Isloading,
     error,
   } = Usefetch(
-    "https://gnews.io/api/v4/search?q=example&lang=en&country=us&max=10&apikey=8069d1a821a75dd10211cdba7f3a7117julio"
+    "https://gnews.io/api/v4/search?q=example&lang=en&country=us&max=10&apikey=8069d1a821a75dd10211cdba7f3a7117"
   );
 
   if (Isloading) {
@@ -36,7 +36,7 @@ const Article = ({ navigation }) => {
       {articles &&
         articles.map((article, index) => (
           <TouchableOpacity onPress={() => handleArticlePress(article)}>
-            <MapArticle article={article} key={index} />
+            <MapArticle article={article} key={index.id} />
           </TouchableOpacity>
         ))}
     </ScrollView>

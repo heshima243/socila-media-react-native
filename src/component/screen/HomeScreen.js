@@ -8,7 +8,7 @@ function HomeScreen() {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        Options={{ headerShown: false }}
+        options={{ headerShown: false }}
         name="HomePage"
         component={Article}
       />
